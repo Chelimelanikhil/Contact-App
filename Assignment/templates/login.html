@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <section>
+    <div class="imgBx"> 
+      <img src="https://previews.123rf.com/images/vectorv/vectorv1904/vectorv190412784/122995801-white-phone-book-icon-isolated-with-long-shadow-address-book-telephone-directory-green-circle.jpg">
+    </div>
+    <div class="contentBx">
+      <div class="formBx">
+        <h2>Sign in</h2>
+        <form method="POST">
+          <div class="inputBx">
+            <span>Username</span>
+            <input type="text" id="username" name="username" placeholder="Enter Your Email" required>
+          </div>
+          <div class="inputBx">
+            <span>Password</span>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+          </div>
+          {% if error %}
+          <div class="alert alert-danger">{{ error }}</div>
+          {% endif %}
+          <div class="remember">
+            <label><input type="checkbox" name="">Remember me</label>
+          </div>
+          <div class="inputBx">
+            <input type="submit" value="Sign in" name="">
+          </div>
+          <div class="inputBx">
+            <p>Don't have an account? <a href='C:\Users\ankus\OneDrive\Documents\Ecommerce Website Making\Registration Page\index.html'>Signup now</a></p>
+          </div>
+         
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

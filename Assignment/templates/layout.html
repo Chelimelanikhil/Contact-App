@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact App</title>
+    <style>
+        /* Reset some default styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the navigation menu */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #007bff;
+        }
+
+        /* Style the content area */
+        .content {
+            padding: 20px;
+        }
+
+     
+
+        /* Style the profile picture */
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Style the contact name link */
+        .contact a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+       
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/add_contact">Add Contact</a></li>
+            <li><a href="/view_contacts">View Contacts</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content">
+
+        
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

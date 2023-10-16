@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    /* Style the container */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Style the contact list */
+    .contact-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    /* Style each individual contact item */
+    .contact {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    /* Style the profile picture */
+    .profile-pic {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    /* Style the contact name link */
+    .contact a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    /* Style the search bar */
+    /* .search-bar {
+        float: right;
+        margin-top: -30px;
+        margin-right: 10px;
+    } */
+
+    .search-bar input[type="text"] {
+       
+        height: 30px; /* Set the height to match the button */
+    }
+   /* Style the search bar container */
+    .search-bar {
+        float: right;
+        margin-top: -30px;
+        margin-right: 10px;
+       
+        
+    }
+
+   
+
+    /* Style the search button */
+    .search-bar button {
+        background-color: #007bff; 
+        color: white; 
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    /* Style the search button on hover */
+    .search-bar button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+
+</style>
+
+<div class="container">
+    <h1>Contact List:</h1>
+
+    <!-- Add the search bar -->
+    <div class="search-bar">
+        <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="Search contacts...">
+            <button type="submit" class="button">Search</button>
+        </form>
+    </div>
+
+    <!-- Display "no results" message if applicable -->
+    {% if no_results_message %}
+       <b> <p>{{ no_results_message }}</p></b>
+    {% endif %}
+
+    <!-- Contact list -->
+    <ul class="contact-list">
+        {% for contact in contacts %}
+        <li class="contact">
+            <img src="{{ contact.image }}" class="profile-pic">
+            <a href="/view_contact/{{ contact.id }}">{{ contact.first_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

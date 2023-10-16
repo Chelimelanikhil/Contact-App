@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+  
+    /* Style the container */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+        height: 100vh; /* Make the container take up the full viewport height */
+    }
+
+    /* Style the contact image */
+    img {
+        max-width: 150px;
+        border: 2px solid #333;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    /* Style the contact information */
+    p {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    /* Style the Edit and Delete links */
+    button {
+        background-color: #007bff; /* Blue background color */
+        color: #fff; /* White text color */
+        border: none; /* Remove button border */
+        border-radius: 4px; /* Rounded corners */
+        padding: 10px 20px; /* Padding inside the button */
+        margin-right: 10px; /* Add some spacing between buttons */
+        cursor: pointer; /* Change cursor to pointer on hover */
+    }
+
+    /* Style the Edit button on hover */
+    button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Style the Delete button */
+    button.delete {
+        background-color: #dc3545; /* Red background color */
+    }
+
+    /* Style the Delete button on hover */
+    button.delete:hover {
+        background-color: #c82333; /* Darker red on hover */
+    }
+
+    /* Add more custom styles as needed */
+</style>
+
+
+<div class="container">
+    <h1>Contact Details</h1>
+    <div>
+        <img src="{{ contact[5] }}" width="150" alt="Contact Image">
+    </div>
+    <div>
+        <p><strong>First Name:</strong> {{ contact[1] }}</p>
+        <p><strong>Last Name:</strong> {{ contact[2] }}</p>
+        <p><strong>Email:</strong> {{ contact[3] }}</p>
+        <p><strong>Phone Number:</strong> {{ contact[4] }}</p>
+    </div>
+    <div>
+        <br>
+       <button> <a href="/edit_contact/{{ contact[0] }}">Edit</a></button>
+       <button><a href="/delete_contact/{{ contact[0] }}">Delete</a></button>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    /* Style the container */
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px 0;
+       
+        
+    }
+
+    /* Style the form elements */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .centered-heading {
+        text-align: center;
+    }
+    /* Add more custom styles as needed */
+</style>
+<div class="container">
+    <div class="centered-heading">
+        <h2>Add Contact</h2>
+    </div>
+    <form method="POST" action="/add_contact" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+        </div>
+        <div class="form-group">
+            <label for="image">Profile Image:</label>
+            <input type="file" class="form-control-file" id="image" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Contact</button>
+    </form>
+</div>
+{% endblock %}

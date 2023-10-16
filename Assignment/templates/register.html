@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <section>
+    <div class="imgBx">
+      <img src="https://thumbs.dreamstime.com/b/white-telephone-handset-icon-isolated-long-shadow-phone-sign-green-circle-button-vector-208308549.jpg">
+    </div>
+    <div class="contentBx">
+      <div class="formBx">
+        <h2>Sign up</h2>
+        <form method="POST">
+          <div class="inputBx">
+            <span>Username</span>
+            <input type="text" name="username" placeholder="Enter Your Full Name" required>
+          </div>
+          <div class="inputBx">
+            <span>Password</span>
+            <input type="password" name="password" placeholder="Enter Your Email" required>
+          </div>
+          <div class="inputBx">
+            <span>Email</span>
+            <input type="text" name="email" placeholder="Enter Your Password" required>
+          </div>
+          <div class="remember">
+            <label><input type="checkbox" name="remember">Remember me</label>
+          </div>
+          <div class="inputBx">
+            <input type="submit" value="Sign up">
+          </div>
+          <div class="inputBx">
+            <p>Already a member? <a href="{{ url_for('login') }}">Sign in now</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
